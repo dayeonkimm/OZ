@@ -1,0 +1,45 @@
+*{
+    text-align: center;
+}
+
+html{
+    background-color: #b7d3f7fc;
+    font-size: 16px;
+}
+
+body{
+    width: 640px; 
+    margin: auto;
+}
+
+h1{
+    font-size: 48px;
+}
+
+img{
+    width: 350px;
+    border-radius: 20px;
+
+}
+
+p{
+    font-size: 1.2rem;
+}
+h1{
+        font-family: "Moirai One", system-ui;
+        font-weight: 400;
+        font-style: normal;
+    }
+h2{
+        font-family: "Bagel Fat One", system-ui;
+        font-weight: 400;
+        font-style: normal;
+    }
+p{
+        font-family: "Jua", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+    }
+      
+
+      
