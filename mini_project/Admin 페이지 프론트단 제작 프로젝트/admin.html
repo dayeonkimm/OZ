@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>Admin Page</title>
+    <!--부트스트랩 사용을 위한 코드 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+</head>
+
+<style>
+    h3 {
+        display: inline;
+    }
+    </style>
+
+<body>
+    <div class="container mt-3">
+        <h3 id="title" class="mt-5 mb-3">신규 등록 상품</h3>
+        <span id="updateDate"></span> <br><br>
+        <form class="row row-cols-lg-auto g-3 align-items-center"> 
+          <div class="col-12">
+              <label class="visually-hidden" for="categorySelect">Preference</label>
+              <select class="form-select" id="categorySelect">
+                <!-- 카테고리 셀렉트 코드를 넣어주세요-->
+                <option value="전체" selected>전체</option>
+                <option value="상의">상의</option>
+                <option value="하의">하의</option>
+                <option value="신발">신발</option>
+                <option value="패션잡화">패션잡화</option>
+              </select>
+            </div>
+
+            <div class="col-3">
+                <label for="productInput"></label>
+                <!-- input 입력창 코드를 넣어주세요 -->
+                <input id="productInput" placeholder="제품명울 입력해주세요">
+              </div>
+        
+            <div class="col-auto">
+                <!-- 조회라는 이름의 버튼 만들기 -->
+                <button type="button" id="searchButton">조회</button>
+            </div> 
+            <div class="col-auto">
+                <button type="button" onclick="deleteCheckedRows()">삭제</button>
+            </div>
+        
+            <div>
+                <input type="radio" name="gender" value="전체" checked>전체
+                <input type="radio" name="gender" value="남성">남성
+                <input type="radio" name="gender" value="여성">여성
+            </div>
+        
+    
+        </form> 
+    </div>      
+          
+
+    <div class="container mt-3">
+        <table class="table table-sm" id="myTable">
+            <thead>
+                <!-- 열의 속성값을 나타내는 코드를 작성해주세요 (예 : 카테고리, 브랜드, 상품명, 가격) -->
+                <tr>
+                    <th><input type="checkbox" id="selectAllCheckbox"></th>
+                    <th name="category">카테고리</th>
+                    <th name="gender">성별</th>
+                    <th name="brand">브랜드</th>
+                    <th name="brand">제품명</th>
+                    <th name="price">가격</th>
+                </tr>     
+            </thead>
+            <tbody id="data-table">
+                <!-- 추후 크롤링한 데이터가 들어가는 자리 -->
+            </tbody>
+        </table>
+    </div>
+
+    <div>
+        <a 
+          href="https://github.com/dayeonkimm"
+          target="_blank">
+          <img src="github.png" alt="다연의 사진" width="30">
+          </a>
+        </div>
+        
+        <style>
+            img{
+                margin-left: 100px;
+            }
+        </style>
+
+    <!-- 페이지 네이션 코드를 넣어주세요 -->
+    <div>
+    <nav aria-label="Page navigation example">
+        <ul class="pagination justify-content-center">
+        <li class="page-item disabled">
+            <a class="page-link">Previous</a>
+        </li>
+        <li class="page-item"><a class="page-link" href="#">1</a></li>
+        <li class="page-item"><a class="page-link" href="#">2</a></li>
+        <li class="page-item"><a class="page-link" href="#">3</a></li>
+        <li class="page-item">
+            <a class="page-link" href="#">Next</a>
+        </li>
+        </ul>
+    </nav>
+    </div>
+
+
+    <script src="admin.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+    
+</body>
+</html>
