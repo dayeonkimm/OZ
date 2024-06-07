@@ -5,9 +5,13 @@ from .models import Address
 from rest_framework.exceptions import NotFound
 
 from addresses import serializers
+from rest_framework.authentication import TokenAuthentication # 사용자 인증
+from rest_framework.permissions import IsAuthenticated # 권한 부여
 
 
-class Addresses(APIView):
+class AddressList(APIView):
+    authentication_classes = [TokenAuthentication]
+    permission_classes = [IsAuthenticated]
     def get(self, request):
         addresses = Address.objects.all()
         serializer = AddressSerializer(addresses, many=True)
@@ -15,6 +19,8 @@ class Addresses(APIView):
         return Response(serializer.data)
     
 class AddressDetail(APIView):
+    authentication_classes = [TokenAuthentication]
+    permission_classes = [IsAuthenticated]
     def get_object(self, address_id):
         try:
             return Address.objects.get(id=address_id)
